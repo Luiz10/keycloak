@@ -7,7 +7,7 @@ services:
     container_name: keycloak
     image: quay.io/keycloak/keycloak:24.0
     environment:
-      KC_HOSTNAME: 34.194.36.97
+      KC_HOSTNAME: 44.200.208.34
       KC_HOSTNAME_PORT: 7080
       KC_HOSTNAME_STRICT_BACKCHANNEL: "true"
       KEYCLOAK_ADMIN: admin
@@ -15,11 +15,11 @@ services:
       KC_HEALTH_ENABLED: "true"
       KC_LOG_LEVEL: info
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://34.194.36.97:80/health/ready"]
+      test: ["CMD", "curl", "-f", "http://44.200.208.34:80/health/ready"]
       interval: 15s
       timeout: 2s
       retries: 15
-    command: ["start-dev", "--http-port", "7080", "--https-port", "7443"]
+    command: ["start-dev", "--http-port", "80", "--https-port", "7443"]
     ports:
       - "80:7080"
       - "7443:7443"
